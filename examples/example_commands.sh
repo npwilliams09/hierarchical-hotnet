@@ -148,6 +148,8 @@ done
 
 echo "Processing hierarchies..."
 
+setCut=10
+
 # This example uses -lsb/--lower_size_bound 1 because it is a small toy example
 # with 25 vertices.  Use larger value (default is 10) for larger graphs.
 for network in network_1
@@ -163,6 +165,7 @@ do
             -cf   $results/clusters_"$network"_"$score".tsv \
             -pl   $network $score \
             -pf   $results/sizes_"$network"_"$score".pdf
+            -cst  $setCut
     done
 done
 
